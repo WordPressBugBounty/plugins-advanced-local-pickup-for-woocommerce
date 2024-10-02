@@ -5,7 +5,7 @@ Tags: woocommerce, local pickup, in store pickup, shipping, shipping options
 Requires at least: 5.0
 Tested up to: 6.6
 Requires PHP: 7.0
-Stable tag: 1.6.6
+Stable tag: 1.6.7
 License: GPLv2 
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -72,6 +72,9 @@ You can get more information, detailed tutorials on the [ALP documentation](http
 
 
 == Changelog ==
+
+= 1.6.7 =
+* Fix - the translations issue with Loco translation plugin
 
 = 1.6.6 =
 * Dev - Tested with WordPress 6.6
