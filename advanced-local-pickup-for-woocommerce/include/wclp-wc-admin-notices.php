@@ -191,7 +191,7 @@ class WC_ALP_Admin_Notices_Under_WC_Admin {
 			<p>We hope <strong>Zorem Local Pickup</strong> is making your WooCommerce store’s local pickup process smoother and more efficient! Your feedback helps us improve and bring you even better features.</p>
 			<p>If you’re enjoying the plugin, please take a moment to leave us a <strong>5-star review</strong>—it means a lot to us! ⭐</p>
 			<p><a href="https://wordpress.org/support/plugin/advanced-local-pickup-for-woocommerce/reviews/#new-post" class="button-primary alp_notice_btn" target="_blank"><?php esc_html_e('Leave a Review', 'zorem-local-pickup'); ?></a>
-			<a href="<?php echo $dismissable_url; ?>" class="button-primary alp_notice_btn" target="_blank"><?php esc_html_e('Dismiss', 'zorem-local-pickup'); ?></a></p>
+			<a href="<?php echo $dismissable_url; ?>" class="button-primary alp_notice_btn"><?php esc_html_e('Dismiss', 'zorem-local-pickup'); ?></a></p>
 		</div>
 		<?php
 	}
