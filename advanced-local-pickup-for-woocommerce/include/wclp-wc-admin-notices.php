@@ -132,11 +132,11 @@ class WC_ALP_Admin_Notices_Under_WC_Admin {
 		</style>
 		<div class="notice updated notice-success alp-dismissable-notice">
 			<a href="<?php echo $dismissable_url; ?>" class="notice-dismiss"><span class="screen-reader-text">Dismiss this notice.</span></a>
-			<h2><?php esc_html_e('🚀 Supercharge Your Local Pickup with Zorem Local Pickup PRO!', 'zorem-local-pickup'); ?></h2>
-			<p>Enhance your local pickup workflow with <a href="https://www.zorem.com/product/advanced-local-pickup-pro/">Zorem Local Pickup PRO!</a> Set up multiple pickup locations, offer pickup appointments, customize instructions, and manage orders efficiently with a fulfillment dashboard.</p>
-			<p><strong>🎉 Get 20% Off your first order!</strong> Use code <strong>ALPPRO20</strong> at checkout.</p>
+			<h2><?php esc_html_e('🏪 Upgrade to Zorem Local Pickup PRO & Streamline Your Local Pickup Workflow!', 'zorem-local-pickup'); ?></h2>
+			<p>Take control of your local pickups with <a href="https://www.zorem.com/product/advanced-local-pickup-pro/">Zorem Local Pickup PRO</a>. Set up multiple pickup locations, offer scheduled appointments, customize pickup instructions, and manage orders from a centralized fulfillment dashboard—all within WooCommerce.</p>
+			<p><strong>🎉 Get 20% Off!</strong> for new customers only. Use code <strong>ALPPRO20</strong> at checkout.</p>
 			<a href="https://www.zorem.com/product/advanced-local-pickup-pro/" class="button-primary alp_notice_btn" target="_blank"><?php esc_html_e('UPGRADE NOW', 'zorem-local-pickup'); ?></a>
-			<a href="<?php echo $dismissable_url; ?>" class="button-primary alp_notice_btn" target="_blank"><?php esc_html_e('Dismiss', 'zorem-local-pickup'); ?></a>
+			<a href="<?php echo $dismissable_url; ?>" class="button-primary alp_notice_btn"><?php esc_html_e('Dismiss', 'zorem-local-pickup'); ?></a>
 			<p><strong>★</strong> for new customers only</p>
 		</div>
 		<?php
