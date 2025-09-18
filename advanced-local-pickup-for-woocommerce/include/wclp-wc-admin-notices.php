@@ -113,10 +113,17 @@ class WC_ALP_Admin_Notices_Under_WC_Admin {
 		</style>
 		<div class="notice updated notice-success alp-dismissable-notice">
 			<a href="<?php echo $dismissable_url; ?>" class="notice-dismiss"><span class="screen-reader-text">Dismiss this notice.</span></a>
-			<h2><?php esc_html_e('🔁 Simplify Returns with Zorem Returns for WooCommerce!', 'zorem-local-pickup'); ?></h2>
-			<p>Let your customers easily request returns or exchanges directly from their account. With features like return approvals, customizable return reasons, and automated status updates, the Zorem Returns plugin helps you manage post-purchase experiences more efficiently.</p>
-			<p><strong>🎁 Special Offer:</strong> Get <strong>20% OFF</strong> with coupon code <strong>RETURNS20</strong>!</p>
-			<a href="https://www.zorem.com/product/zorem-returns/" class="button-primary alp_notice_btn" target="_blank"><?php esc_html_e('👉 Learn More & Get Zorem Returns', 'zorem-local-pickup'); ?></a>
+			<h2><?php esc_html_e('📦 Upgrade to Zorem Local Pickup PRO – Unlock Powerful Pickup Features!', 'zorem-local-pickup'); ?></h2>
+			<p>Take your local pickup experience to the next level with Zorem Local Pickup PRO:</p>
+			<ul>
+				<li>✅ Let customers schedule pickup appointments</li>
+				<li>✅ Set up multiple pickup locations</li>
+				<li>✅ Send pickup reminders and instructions</li>
+				<li>✅ Apply pickup-based discounts or fees</li>
+				<li>✅ Customize pickup availability and display options</li>
+			</ul>
+			<p>🎁 Special Offer: Get 20% OFF with coupon code ALPPRO20 – limited time only!</p>
+			<a href="https://www.zorem.com/product/zorem-returns/" class="button-primary alp_notice_btn" target="_blank"><?php esc_html_e('👉 Upgrade to Zorem Local Pickup PRO', 'zorem-local-pickup'); ?></a>
 			<a href="<?php echo $dismissable_url; ?>" class="button-primary alp_notice_btn"><?php esc_html_e('Dismiss', 'zorem-local-pickup'); ?></a>
 		</div>
 		<?php
