@@ -9,6 +9,8 @@ Stable tag: 1.7.6
 License: GPLv2 
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
+Zorem Local Pickup plugin enhances WooCommerce by streamlining in-store pickups, offering a dedicated workflow for local pickup fulfillment.
+
 == Description ==
 
 The Zorem Local Pickup plugin makes handling in-store and curbside pickup easier by extending WooCommerce's default Local Pickup shipping method. It creates a streamlined pickup fulfillment workflow, with clear order statuses, automated email notifications, and detailed pickup instructions for your customers.
