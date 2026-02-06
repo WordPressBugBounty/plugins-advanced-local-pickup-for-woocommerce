@@ -40,8 +40,8 @@ class WC_ALP_Admin_Notices_Under_WC_Admin {
 		add_action( 'alp_settings_admin_notice', array( $this, 'alp_settings_admin_notice' ) );
 		add_action( 'alp_settings_admin_footer', array( $this, 'alp_settings_admin_footer' ) );
 
-		add_action('admin_notices', array( $this, 'alp_admin_upgrade_notice' ) );
-		add_action( 'admin_init', array( $this, 'alp_notice_ignore' ) );
+		add_action('admin_notices', array( $this, 'alp_pro178' ) );
+		add_action( 'admin_init', array( $this, 'alp_notice_dismiss178' ) );
 	}
 
 	public function alp_settings_admin_notice() {
@@ -55,32 +55,32 @@ class WC_ALP_Admin_Notices_Under_WC_Admin {
 	/*
 	* Dismiss admin notice for alp
 	*/
-	public function alp_notice_ignore() {
-		if ( isset( $_GET['alp-notice-dismiss'] ) ) {
+	public function alp_notice_dismiss178() {
+		if ( isset( $_GET['notice-dismiss-alp'] ) ) {
 			
 			if (isset($_GET['nonce'])) {
 				$nonce = sanitize_text_field($_GET['nonce']);
-				if (wp_verify_nonce($nonce, 'alp_dismiss_notice')) {
-					update_option('alp_notice_ignore', 'true');
+				if (wp_verify_nonce($nonce, 'alp_notice_close')) {
+					update_option('alp_notice_dismiss178', 'true');
 				}
 			}
 			
 		}
 	}
 
-	public function alp_admin_upgrade_notice() {
+	public function alp_pro178() {
 		
 		// Exclude notice from a specific page (replace 'alp_plugin_page' with your actual page slug)
 		if (isset($_GET['page']) && $_GET['page'] === 'local_pickup') {
 			return;
 		}
 
-		if ( get_option('alp_notice_ignore') ) {
+		if ( get_option('alp_notice_dismiss178') ) {
 			return;
 		}	
 
-		$nonce = wp_create_nonce('alp_dismiss_notice');
-		$dismissable_url = esc_url(add_query_arg(['alp-notice-dismiss' => 'true', 'nonce' => $nonce]));
+		$nonce = wp_create_nonce('alp_notice_close');
+		$dismissable_url = esc_url(add_query_arg(['notice-dismiss-alp' => 'true', 'nonce' => $nonce]));
 	
 		?>
 		<style>		
@@ -113,18 +113,17 @@ class WC_ALP_Admin_Notices_Under_WC_Admin {
 		</style>
 		<div class="notice updated notice-success alp-dismissable-notice">
 			<a href="<?php echo $dismissable_url; ?>" class="notice-dismiss"><span class="screen-reader-text">Dismiss this notice.</span></a>
-			<h2><?php esc_html_e('📦 Upgrade to Zorem Local Pickup PRO – Unlock Powerful Pickup Features!', 'zorem-local-pickup'); ?></h2>
+			<h2><?php esc_html_e('📦 Upgrade to Local Pickup PRO – Unlock Powerful Pickup Features!'); ?></h2>
 			<p>Take your local pickup experience to the next level with Zorem Local Pickup PRO:</p>
-			<ul>
-				<li>✅ Let customers schedule pickup appointments</li>
-				<li>✅ Set up multiple pickup locations</li>
-				<li>✅ Send pickup reminders and instructions</li>
-				<li>✅ Apply pickup-based discounts or fees</li>
-				<li>✅ Customize pickup availability and display options</li>
-			</ul>
+			<p>✅ Let customers schedule pickup appointments</p>
+			<p>✅ Set up multiple pickup locations</p>
+			<p>✅ Send pickup reminders and instructions</p>
+			<p>✅ Apply pickup-based discounts or fees</p>
+			<p>✅ Customize pickup availability and display options</p>
 			<p>🎁 Special Offer: Get 20% OFF with coupon code ALPPRO20 – limited time only!</p>
-			<a href="https://www.zorem.com/product/zorem-returns/" class="button-primary alp_notice_btn" target="_blank"><?php esc_html_e('👉 Upgrade to Zorem Local Pickup PRO', 'zorem-local-pickup'); ?></a>
-			<a href="<?php echo $dismissable_url; ?>" class="button-primary alp_notice_btn"><?php esc_html_e('Dismiss', 'zorem-local-pickup'); ?></a>
+
+			<a class="button-primary alp_notice_btn" target="blank" href="https://www.zorem.com/product/zorem-local-pickup-pro/">Upgrade to Local Pickup PRO</a>
+			<a class="button-primary alp_notice_btn" href="<?php esc_html_e( $dismissable_url ); ?>"><?php esc_html_e('Dismiss', 'zorem-local-pickup'); ?></a>
 		</div>
 		<?php
 	}
