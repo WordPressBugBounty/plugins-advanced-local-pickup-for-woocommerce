@@ -3,6 +3,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+// phpcs:disable WordPress.Security.NonceVerification.Recommended -- Dismiss link handler verifies nonce via wp_verify_nonce() explicitly; admin_notices display simply reads $_GET['page'] to conditionally suppress the notice.
+// phpcs:disable WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedFunctionFound -- Function is the singleton accessor for the class of the same name; renaming would break backward compatibility with existing installs.
+
 class WC_ALP_Admin_Notices_Under_WC_Admin {
 
 	/**
@@ -39,8 +42,8 @@ class WC_ALP_Admin_Notices_Under_WC_Admin {
 	public function init() {						
 		add_action( 'alp_settings_admin_notice', array( $this, 'alp_settings_admin_notice' ) );
 
-		add_action('admin_notices', array( $this, 'alp_pro180' ) );
-		add_action( 'admin_init', array( $this, 'alp_notice_dismiss180' ) );
+		add_action('admin_notices', array( $this, 'alp_pro190' ) );
+		add_action( 'admin_init', array( $this, 'alp_notice_dismiss190' ) );
 	}
 
 	public function alp_settings_admin_notice() {
@@ -50,27 +53,27 @@ class WC_ALP_Admin_Notices_Under_WC_Admin {
 	/*
 	* Dismiss admin notice for alp
 	*/
-	public function alp_notice_dismiss180() {
+	public function alp_notice_dismiss190() {
 		if ( isset( $_GET['notice-dismiss-alp'] ) ) {
 			
 			if (isset($_GET['nonce'])) {
-				$nonce = sanitize_text_field($_GET['nonce']);
+				$nonce = sanitize_text_field( wp_unslash( $_GET['nonce'] ) );
 				if (wp_verify_nonce($nonce, 'alp_notice_close')) {
-					update_option('alp_notice_dismiss180', 'true');
+					update_option('alp_notice_dismiss190', 'true');
 				}
 			}
 			
 		}
 	}
 
-	public function alp_pro180() {
+	public function alp_pro190() {
 		
 		// Exclude notice from a specific page (replace 'alp_plugin_page' with your actual page slug)
 		if (isset($_GET['page']) && $_GET['page'] === 'local_pickup') {
 			return;
 		}
 
-		if ( get_option('alp_notice_dismiss180') ) {
+		if ( get_option('alp_notice_dismiss190') ) {
 			return;
 		}	
 
@@ -107,18 +110,18 @@ class WC_ALP_Admin_Notices_Under_WC_Admin {
 		}
 		</style>
 		<div class="notice updated notice-success alp-dismissable-notice">
-			<a href="<?php echo $dismissable_url; ?>" class="notice-dismiss"><span class="screen-reader-text">Dismiss this notice.</span></a>
-			<h2><?php esc_html_e('📦 Upgrade to Local Pickup PRO – Unlock Powerful Pickup Features!'); ?></h2>
-			<p>Take your local pickup experience to the next level with Zorem Local Pickup PRO:</p>
-			<p>✅ Let customers schedule pickup appointments</p>
-			<p>✅ Set up multiple pickup locations</p>
-			<p>✅ Send pickup reminders and instructions</p>
-			<p>✅ Apply pickup-based discounts or fees</p>
-			<p>✅ Customize pickup availability and display options</p>
-			<p>🎁 Special Offer: Get 20% OFF with coupon code ALPPRO20 – limited time only!</p>
+			<a href="<?php echo esc_url( $dismissable_url ); ?>" class="notice-dismiss"><span class="screen-reader-text"><?php esc_html_e( 'Dismiss this notice.', 'advanced-local-pickup-for-woocommerce' ); ?></span></a>
+			<h2><?php esc_html_e( '📦 Upgrade to Local Pickup PRO – Unlock Powerful Pickup Features!', 'advanced-local-pickup-for-woocommerce' ); ?></h2>
+			<p><?php esc_html_e( 'Take your local pickup experience to the next level with Zorem Local Pickup PRO:', 'advanced-local-pickup-for-woocommerce' ); ?></p>
+			<p><?php esc_html_e( '✅ Let customers schedule pickup appointments', 'advanced-local-pickup-for-woocommerce' ); ?></p>
+			<p><?php esc_html_e( '✅ Set up multiple pickup locations', 'advanced-local-pickup-for-woocommerce' ); ?></p>
+			<p><?php esc_html_e( '✅ Send pickup reminders and instructions', 'advanced-local-pickup-for-woocommerce' ); ?></p>
+			<p><?php esc_html_e( '✅ Apply pickup-based discounts or fees', 'advanced-local-pickup-for-woocommerce' ); ?></p>
+			<p><?php esc_html_e( '✅ Customize pickup availability and display options', 'advanced-local-pickup-for-woocommerce' ); ?></p>
+			<p><?php esc_html_e( '🎁 Special Offer: Get 20% OFF with coupon code ALPPRO20 – limited time only!', 'advanced-local-pickup-for-woocommerce' ); ?></p>
 
-			<a class="button-primary alp_notice_btn" target="blank" href="https://www.zorem.com/product/zorem-local-pickup-pro/">Upgrade to Local Pickup PRO</a>
-			<a class="button-primary alp_notice_btn" href="<?php esc_html_e( $dismissable_url ); ?>"><?php esc_html_e('Dismiss', 'zorem-local-pickup'); ?></a>
+			<a class="button-primary alp_notice_btn" target="blank" href="https://www.zorem.com/product/zorem-local-pickup-pro/"><?php esc_html_e( 'Upgrade to Local Pickup PRO', 'advanced-local-pickup-for-woocommerce' ); ?></a>
+			<a class="button-primary alp_notice_btn" href="<?php echo esc_url( $dismissable_url ); ?>"><?php esc_html_e( 'Dismiss', 'advanced-local-pickup-for-woocommerce' ); ?></a>
 		</div>
 		<?php
 	}
