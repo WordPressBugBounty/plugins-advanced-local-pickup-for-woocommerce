@@ -1,12 +1,12 @@
 <?php
 /*
-* Plugin Name: Zorem Local Pickup
+* Plugin Name: Advanced Local Pickup for WooCommerce
 * Plugin URI:  https://www.zorem.com/shop
-* Short Description: Extend WooCommerce with Zorem Local Pickup to streamline your in-store pickup.
-* Description: Enhance your WooCommerce store's local pickup service with Zorem Local Pickup. This powerful tool expands on the standard Local Pickup shipping method, offering a streamlined and efficient way to manage in-store pickups. Simplify your process and improve customer satisfaction with Zorem Local Pickup.
+* Short Description: Extend WooCommerce with Advanced Local Pickup for WooCommerce to streamline your in-store pickup.
+* Description: Enhance your WooCommerce store's local pickup service with Advanced Local Pickup for WooCommerce. This powerful tool expands on the standard Local Pickup shipping method, offering a streamlined and efficient way to manage in-store pickups. Simplify your process and improve customer satisfaction with Advanced Local Pickup for WooCommerce.
 * Author: zorem
 * Author URI: https://www.zorem.com/
-* Version: 1.9.2
+* Version: 1.9.3
 * License: GPLv2 or later
 * License URI: https://www.gnu.org/licenses/gpl-2.0.html
 * Text Domain: advanced-local-pickup-for-woocommerce
@@ -32,7 +32,7 @@ class Woocommerce_Local_Pickup {
 	 *
 	 * @var string
 	 */
-	public $version = '1.9.2';
+	public $version = '1.9.3';
 	public $admin;
 	public $install;
 	public $table;
