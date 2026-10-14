@@ -2,11 +2,11 @@
 Contributors: zorem,gaurav1092,eranzorem,virendesai
 Tags: local pickup, click and collect, in-store pickup, ready for pickup, pickup notifications
 Requires at least: 5.5
-Tested up to: 7.1
-Stable tag: 1.9.3
+Tested up to: 7.1.3
+Stable tag: 1.9.4
 Requires PHP: 7.0
 WC requires at least: 5.0
-WC tested up to: 11.1.0
+WC tested up to: 11.2.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -141,6 +141,14 @@ Explore the full catalog at [zorem.com →](https://www.zorem.com/)
 
 Alternatively, upload the `advanced-local-pickup-for-woocommerce` folder to `/wp-content/plugins/` and activate through the Plugins menu.
 
+== Screenshots ==
+
+1. The Ready for Pickup email your customer receives — pickup address, opening hours and order details, with the subject, heading and content all editable in the live preview customizer.
+2. In-store pickup instructions on the order received page, shown the moment a customer finishes checkout so they know exactly where and when to collect.
+3. A complete click & collect workflow — the Ready for Pickup and Picked Up order statuses, each with its own colour and its own automatic customer email.
+4. Set your pickup location once: store name, address and business hours appear automatically in every pickup notification and on the customer's order page.
+5. Choose where pickup details are displayed — My Account order history, the order received page, and the processing order email.
+
 == Frequently Asked Questions ==
 
 = How is this different from the built-in WooCommerce Local Pickup? =
@@ -208,6 +216,12 @@ Two: **Ready for Pickup** and **Picked Up**. Both appear in the WooCommerce orde
 Yes. Pickup instructions can be displayed on the order received page straight after checkout, and optionally in the Processing order email, so customers know where and when to collect before the order is even ready.
 
 == Changelog ==
+
+= 1.9.4 =
+* Improved – [Security] ALP Free: check customizer for unauthenticated REST routes (same as AST PRO).
+* Improved – Bump "Tested up to" WordPress version to 7.1 — Local Pickup Free.
+* Enhancement – Add an in-plugin upgrade surface matching the AST pattern.
+* Dev – Tested with WooCommerce 10.2.1 and WordPress 7.1.3.
 
 = 1.9.3 =
 * Improved – Renamed the plugin to Advanced Local Pickup for WooCommerce, matching the plugin slug and Advanced Local Pickup PRO. The plugin slug, settings and all existing data are unchanged.
